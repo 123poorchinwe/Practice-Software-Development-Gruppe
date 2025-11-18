@@ -1,0 +1,22 @@
+
+public class IDW{
+    public static double calculate(double[][] data, int r, int c) {
+        double up = 0;    
+        double down =0;  
+
+        for (int i = 0; i < data.length; i++) {
+            for (int j= 0; j < data[0].length; j++) {
+                double t = data[i][j];
+                if (!Double.isNaN(t)) {          
+                    double dist = distance.euclidean(r, c, i, j);
+                    if (dist == 0.0) 
+                    	return t;   
+                    double w = 1/ (dist * dist); 
+                    up += w * t;
+                    down += w;
+                }
+            }
+        }
+        return (down == 0) ? Double.NaN : up / down;
+    }
+}

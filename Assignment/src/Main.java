@@ -11,10 +11,9 @@ public class Main {
         };
         double[][] output = idw(input);
 
-        for (int i = 0; i < output.length; i++) {
-            for (int j = 0; j < output[i].length; j++) {
-            	 System.out.println(output[i][j]);             
-            }
+        System.out.println(output[0][0] + " " + output[0][1] + " " + output[0][2]);
+        System.out.println(output[1][0] + " " + output[1][1] + " " + output[1][2]);
+        System.out.println(output[2][0] + " " + output[2][1] + " " + output[2][2]);
         }
-    }
+        
 }
