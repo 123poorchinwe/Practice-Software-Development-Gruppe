@@ -1,6 +1,6 @@
 public class Main {
     public static double[][] idw(double[][] data) {
-        return grid.fill(data);
+        return Fill.fill(data);
     }
 
     public static void main(String[] matrix) {

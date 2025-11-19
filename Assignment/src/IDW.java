@@ -1,4 +1,3 @@
-
 public class IDW {
 	public static double calculate(double[][] data, int r, int c) {
 		double above = 0;
@@ -8,7 +7,7 @@ public class IDW {
 			for (int j = 0; j < data[0].length; j++) {
 				double t = data[i][j];
 				if (!Double.isNaN(t)) {
-					double dis = distance.dis(r, c, i, j);
+					double dis = Distance.dis(r, c, i, j);
 					if (dis == 0) {
 						return t;
 					}
