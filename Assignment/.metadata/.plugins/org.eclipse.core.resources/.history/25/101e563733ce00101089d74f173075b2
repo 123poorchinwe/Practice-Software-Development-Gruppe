@@ -1,0 +1,20 @@
+public class IDW {
+	public static double calculate(double[][] data, int r, int c) {
+	    double above = 0, below = 0;
+	    int dr = data.length, dc = data[0].length;
+
+	    for (int i = r - 1; i <= r + 1; i++) {          // 3×3 窗口
+	        for (int j = c - 1; j <= c + 1; j++) {
+	            if (i < 0 || i >= dr || j < 0 || j >= dc) continue; // 越界跳过
+	            double z = data[i][j];
+	            if (Double.isNaN(z) || (i == r && j == c)) continue;
+	            double dis = distance.dis(r, c, i, j);
+	            if (dis == 0) continue;
+	            double w = 1.0 / (dis * dis);
+	            above += w * z;
+	            below += w;
+	        }
+	    }
+	    return below == 0 ? Double.NaN : above / below;
+	}
+}

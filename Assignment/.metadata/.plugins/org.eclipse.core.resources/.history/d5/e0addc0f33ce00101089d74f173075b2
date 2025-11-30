@@ -1,0 +1,23 @@
+public class IDW {
+	public static double calculate(double[][] data, int r, int c) {
+		double above = 0;
+		double below = 0;
+		double weight=0;
+		for (int i = 0; i < data.length; i++) {
+		    for (int j = 0; j < data[0].length; j++) {
+		        double z = data[i][j];
+		        if (Double.isNaN(z) || (i == r && j == c)) continue;
+		        double dis = distance.dis(r, c, i, j);
+		        if (dis == 0) continue;          // 仅防溢出
+		        double w = 1.0 / (dis * dis);
+		        above += w * z;
+		        below += w;
+		    }
+		}
+		if (below == 0) {
+			return Double.NaN;
+		} else {
+			return above / below;
+		}
+	}
+}
