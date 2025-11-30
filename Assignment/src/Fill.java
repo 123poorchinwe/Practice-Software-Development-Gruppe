@@ -1,7 +1,6 @@
-
 public class Fill {
-	public static double[][] fill(double[][] matrix) {
-        int r =matrix.length;
+    public static double[][] fill(double[][] matrix) {
+        int r = matrix.length;
         int c = matrix[0].length;
         double[][] ans = new double[r][c];
         for (int i = 0; i < r; i++) {
@@ -9,9 +8,11 @@ public class Fill {
         }
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < c; j++) {
-                if (Double.isNaN(matrix[i][j])) {
-                    ans[i][j] = IDW.calculate(matrix, i, j);
-                }
+            	if (Double.isNaN(matrix[i][j])) {
+            	    ans[i][j] = IDW.calculate(matrix, i, j); 
+            	} else {
+            	    ans[i][j] = matrix[i][j]; 
+            	}
             }
         }
         return ans;
